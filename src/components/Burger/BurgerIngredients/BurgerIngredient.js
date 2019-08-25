@@ -9,10 +9,7 @@ class BurgerIngredient extends Component {
 		let ingredient = null;
 		
 			switch(this.props.type){
-				case('bread-bottom'):
-					ingredient = <div className={classes.BreadBottom}></div>
-					break;
-				case('BreadTop'):
+				case('bread-top'):
 					ingredient =( 
 								<div className={classes.BreadTop}>
 										<div className={classes.Seeds1}></div>
@@ -20,24 +17,27 @@ class BurgerIngredient extends Component {
 								</div>
 					);
 					break;
-				case('Meat'):
+				case('meat'):
 					ingredient = <div className={classes.Meat}></div>
 					break;
-				case('Cheese'):
+				case('cheese'):
 					ingredient = <div className={classes.Cheese}></div>
 					break;
 				case('bacon'):
-					ingredient = <div className={classes.bacon}></div>
+					ingredient = <div className={classes.Bacon}></div>
 					break;
-				case('Salad'):
+				case('salad'):
 					ingredient = <div className={classes.Salad}></div>
+					break;
+				case('bread-bottom'):
+					ingredient = <div className={classes.BreadBottom}></div>
 					break;
 			}
 		return(ingredient);
 	}
 }
 
-BurgerIngredient.prototype = {
+BurgerIngredient.proptype = {
 	type: PropTypes.string.isRequired
 };
 
