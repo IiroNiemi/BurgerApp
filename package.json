@@ -128,5 +128,17 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "description": "Following lecture about react and redux: https://www.udemy.com/react-the-complete-guide-incl-redux/",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IiroNiemi/BurgerApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IiroNiemi/BurgerApp/issues"
+  },
+  "homepage": "https://github.com/IiroNiemi/BurgerApp#readme"
 }
