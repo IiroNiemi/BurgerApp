@@ -3,33 +3,27 @@ import React from 'react';
 import Aux from '../../../hoc/Auxi';
 import Button from '../../UI/Button/Button'
 
-class orderSummary extends React.Component {
-	constructor(props){
-		super(props)
-		
-		let state = {
-			ingredients: this.props.ingredients
-		}
-		
-	}
+class OrderSummary extends React.Component {
 
-	ingredientsSummary(props){
-		return Object.keys(this.state.ingredients)
-		.map(igKey => {
-			return (
-			<li key={igKey}>
-				<span style={{textTransform: 'capitalize'}}>{igKey}</span>:{props.ingredients[igKey]}
-			</li>);
-		});
-	} 
+  componentDidUpdate(){
+    console.log("Order summary component updated")
+  }
 
 	render(){
+    let ingredientsSummary = Object.keys(this.props.ingredients)
+      .map(igKey => {
+        return (
+        <li key={igKey}>
+          <span style={{textTransform: 'capitalize'}}>{igKey}</span>:{this.props.ingredients[igKey]}
+        </li>);
+      });
+
 		return (
 			<Aux>
 				<h3>Your order</h3>
 				<p>A delicous burger with the following ingredients: </p>
 				<ul>
-					{this.ingredientsSummary}
+					{ingredientsSummary}
 				</ul>
 				<p><strong>Total Price: {this.props.price.toFixed(2)}</strong></p>
 				<p>Continue to Checkout?</p>
@@ -41,4 +35,4 @@ class orderSummary extends React.Component {
 	
 };
 
-export default orderSummary;
+export default OrderSummary;
